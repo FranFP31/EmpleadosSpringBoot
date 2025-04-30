@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Control de Empleados</title>
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+
+
+</head>
+
+<body>
+<header th:insert="~{fragments/header.html::header}"></header>
+<div class="container" th:insert="~{fragments/formulario.html::form}"></div>
+
+
+
+
+
+
+
+</body>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
+<script  rel="text/js" th:href="@{/js/bootstrap.bundle.min.js}"></script>
+</html>

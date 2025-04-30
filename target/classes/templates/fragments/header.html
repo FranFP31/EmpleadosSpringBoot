@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="icon" th:href="@{/img/logo.jpg}">
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <link  rel="text/js" th:href="@{js/bootstrap.bundle.min.js}">
+    <!--Cargo los links de bootstrap-->
+</head>
+<body>
+<!--Con elñ atributo th:fragment="header" me permitira llamar este archivo donde sea necesario-->
+
+<nav class="navbar navbar-light bg-light" th:fragment="header">
+    <div class="container">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img th:src="@{/img/logo.jpg}" alt="" width="150" height="150" class="d-inline-block align-text-top">
+            <div>
+            Sistema de Recursos inHumanos
+            </div>
+        </a>
+    </div>
+    </div>
+</nav>
+
+
+</body>
+</html>

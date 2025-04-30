@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:\\www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" th:src="@{../static/css/bootstrap.min.css}">
+  <link rel="text/js" th:src="@{../static/js/bootstrap.bundle.min.js}">
+</head>
+<body class="d-flex align-items-center"style="height: 100vh">
+<div class="container" th:fragment="formulario">
+  <!--Centrado vertical y horizontal-->
+  <div class="row justify-content-center w-100">
+    <div class="col-12">
+      <h1 class="text-center py-3">Alta de Empleados </h1>
+      <form class="row g-3 needs-validation" novalidate  th:action="@{/empleados/guardar}" th:object="${empleado}" method="get">
+        <div class="col-md-4">
+          <label for="validationServer01" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="validationServer01" value="" required th:field="@{nombre}">
+          <div class="valid-feedback">
+            Inserte su nombre
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationServer02" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" id="validationServer02" value="" required th:field="@{apellidos}">
+          <div class="valid-feedback">
+            Inserte su Apellido
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationServerUsername" class="form-label">Dni</label>
+          <div class="input-group has-validation">
+            <input type="text" class="form-control" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required th:field="@{dni}">
+            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+              Inserte su DNI
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationServer03" class="form-label">Fecha de Nacimiento</label>
+          <input type="text" class="form-control" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+          <div id="validationServer03Feedback" class="invalid-feedback">
+            Ingrese su Fecha de nacimiento
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationServer04" class="form-label">Ingrese su Ultima Titulación</label>
+          <input type="text" class="form-control" id="validationServer04" aria-describedby="validationServer04" required>
+          <div id="validationServer04Feedback" class="invalid-feedback">
+            Ingrese su ultima titulacion
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationServer05" class="form-label">Inserte su puesto</label>
+          <select class="form-select " id="validationServer05" aria-describedby="validationServer05Feedback" required>
+            <option selected disabled value="">Puestos</option>
+            <option>[1] Directivo</option>
+            <option>[2] Administrativo</option>
+            <option>[3] Comercial</option>
+          </select>
+          <div id="validationServer05Feedback" class="invalid-feedback">
+            Inserte su puesto en la empresa
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationServer06" class="form-label">Numero de Hijos</label>
+          <input type="text" class="form-control " id="validationServer06" aria-describedby="validationServer06Feedback" required>
+          <div id="validationServer06Feedback" class="invalid-feedback">
+            Inserte cuantos Hijos tiene
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input " type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+            <label class="form-check-label" for="invalidCheck3">
+              Acepto los terminos y condiciones
+            </label>
+            <div id="invalidCheck3Feedback" class="invalid-feedback">
+              Debe aceptar los terminos y condiones para continuar
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Alta de empleados</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
